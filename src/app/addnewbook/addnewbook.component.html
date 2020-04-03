@@ -1,0 +1,24 @@
+<form class="search" (ngSubmit)="searchBook(search.value)">   
+  <div class="form-group col-xs-10">
+    <input name="text" class="form-control" placeholder="Add your Book" 
+    #search (keyup.enter)="searchBook(search.value)" ngModel>
+  </div>
+  <button type="submit" class="btn btn-default col-xs-2">Search</button>
+</form>
+<div *ngIf="loading" class=" loading text-center">
+  Hang on! We are searching...
+</div>
+<div class="container">
+  <ul class="form-list">
+    <li *ngFor="let book of books">
+      <div class="form-group col-sm-2"><img src="{{book.thumbnail}}" alt="bookImg"></div>
+      <div class="form-group col-sm-8">
+        <a href="{{book.link}}" target="_blank"><span class="text" >{{book.title}}</span></a>
+        <div>
+          <button class="add btn btn-default " id="{{book.id}}" (click)="addBook(book)">Add</button>
+        </div>
+      </div>
+      
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,21 @@
+<div class="text-center"  >
+  <h1>Book Trading Club</h1>
+  <h3>To see all the features, just Login!</h3>
+  <h4><strong>Email:</strong> 123@123.com <strong>Password:</strong>123</h4>
+</div>
+<div class="container">
+    <ul class='row' *ngFor="let book of books">
+      <li class="col-lg-2 col-md-3 col-sm-4 col-xs-12 book">
+          <p class="text-center"><a href="{{book.link}}" target="_blank">{{book.title}} <i class="fa fa-external-link" aria-hidden="true"></i></a><p>
+          <hr>
+          <div class="bookimg">
+            <img src="{{book.thumbnail}}" alt="bookImg">
+          </div>
+          <hr>
+          <div>
+            <button *ngIf="!book.requested" class="add btn" (click)="requestBook(book)">Request</button>
+            <button *ngIf="book.requested" class="add btn" [ngClass]='{disabled: true}'>Already Requested</button>
+          </div> 
+      </li>
+    </ul>
+</div>

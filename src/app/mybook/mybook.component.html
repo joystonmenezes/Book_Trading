@@ -1,0 +1,15 @@
+<nav id="navBar" class="navbar navbar-default col-sm-2">
+  <div class="container-fluid">
+    <div >
+      <ul class="nav nav-pills nav-stacked">
+        <li id="home"><a routerLink="/showmybook" routerLinkActive="active">My Books</a></li>
+        <li id="books"><a routerLink="/addbook" routerLinkActive="active">Add Book</a></li>
+        <li id="borrow"><a routerLink="/borrow" routerLinkActive="active">Borrows</a></li>
+        <li id="request"><a routerLink="/requesttome" routerLinkActive="active">Requests</a></li>      
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="col-sm-10">
+  <router-outlet></router-outlet>
+</div>
